@@ -1,0 +1,37 @@
+// 1 Atoms
+// 2 Molecules
+// 3 Organisms
+// 4 Templates
+// 5 Pages
+
+
+// 1 Atoms
+// 2 Molecules
+// 3 Organisms
+// 4 Templates
+
+//# 4.1 Header template logo
+// $navbar-brand-font-size: $font-size-base * 2;
+
+.navbar-logo-container {
+	
+	.navbar-brand,
+	h1.navbar-brand a{
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+
+		font-size: 34px;
+		font-family: "Teko", sans-serif;
+		line-height: 1;
+		text-decoration: none;
+				
+	}
+	.motto {
+		color: $white;
+		line-height: 1;
+	}
+}
+
+// 5 Pages
+

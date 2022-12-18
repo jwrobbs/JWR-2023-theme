@@ -9,11 +9,12 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+echo "<div class='navbar-logo-container'>";
 if ( ! has_custom_logo() ) { ?>
 
 	<?php if ( is_front_page() && is_home() ) : ?>
 
-		<h1 class="navbar-brand mb-0">
+		<h1 class="navbar-brand mb-0 p-0">
 			<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
 				<?php bloginfo( 'name' ); ?>
 			</a>
@@ -31,3 +32,5 @@ if ( ! has_custom_logo() ) { ?>
 } else {
 	the_custom_logo();
 }
+echo "<div class='motto'>Writes code. Speaks human.</div>";
+echo "</div>";
