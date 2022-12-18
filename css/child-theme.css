@@ -14964,6 +14964,10 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
+p {
+  color: red;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;
