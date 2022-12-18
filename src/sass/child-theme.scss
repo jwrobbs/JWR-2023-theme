@@ -1,7 +1,7 @@
 @import "theme/child_theme_variables";                   // <------- Add your variables into this file. Also add variables to overwrite Bootstrap variables here
 @import "assets/bootstrap5/bootstrap";                             // <------- Loads Bootstrap4
 @import "assets/understrap/theme/understrap";  // <------- Loads the Understrap defaults. Just a few classes to incorporate BS in WP
-@import "assets/understrap/theme/woocommerce"; // <------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
+// @import "assets/understrap/theme/woocommerce"; // <------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
 
 // Optional files - If you don´t use the corresponding scripts/fonts comment em out
 @import "assets/fontawesome/font-awesome";                           // <------- Font Awesome Icon font
@@ -11,4 +11,41 @@
 @import "theme/child_theme";                             // <------- Add your styles into this file
 @import "assets/understrap/theme/colors";           // <-------- This creates the necessary bootstrap color classes.
 @import "assets/understrap/theme/blocks";           // <-------- This adds Bootstrap styles to blocks.
-@import "assets/understrap/theme/contact-form7";    // <-------- Contact Form 7 - Bootstrap 4 support
+// @import "assets/understrap/theme/contact-form7";    // <-------- Contact Form 7 - Bootstrap 4 support
+
+@font-face {
+	font-family: 'Teko';
+	src: url('#{$fa-font-path}/Teko-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Teko';
+	src: url('#{$fa-font-path}/Teko-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('#{$fa-font-path}/SourceSansPro-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('#{$fa-font-path}/SourceSansPro-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('#{$fa-font-path}/SourceSansPro-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('#{$fa-font-path}/SourceSansPro-BoldItalic.ttf') format('truetype');
+	font-weight: 700;
+	font-style: italic;
+}
