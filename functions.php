@@ -144,14 +144,67 @@ function jwr_page_toc() { // in dev
 		2.	Add JS to build the whole damn thing. I think I have to.
 			Run in in the footer after that section is built
 			Enqueue it in the footer or embed it
+		2.1 As 2.0 but just add it inline
 	*/
 	//check for ACF repeater field
-	$toc_entries = 1;
-	if( isset($toc_entries) ){
-		echo "<div class = 'toc-container border mt-4'>";
-			echo "<h4 class='text-center my-1'>Table of contents</h4>";
-		echo "</div>";
+	$toc_entries = 1; // !?!
+	if( isset($toc_entries) ){ ?>
+		<div class = 'toc-container border mt-4'>
+			<h4 class='toc-header text-center my-1'>Table of contents</h4>
+			<div class='toc-body my-1'>
+				<ol id='toc-list'></ol>
+				<script>
+					jQuery( document ).ready( readyFn );
+					function readyFn( $ ) {
+						/*
+						1. Get all headers in target section
+						2. Add anchors to header
+						3. Create linked list of headers 
+						*/
+						// console.log('start JS for ToC');
+						const headers = document.querySelectorAll('.entry-content h2');
+						console.log(headers);
+						if( headers.length === 0 ){
+							console.log('no headers');
+							
+							hideToC();
+						}
+						headers.forEach(processHeader);
+					}
 
+					function processHeader(header){
+						// console.log(header);
+						var header_name = header.innerText;
+						// console.log(header_name);
+						header_name = header_name.toLowerCase();
+						// console.log(header_name);
+						header_name = header_name.replace(/[^a-z]/g,'_');
+						console.log(header_name);
+
+						addID(header, header_name);
+						createLink(header, header_name);
+					}
+					function addID(header, header_name){
+						header.setAttribute('id', header_name);
+					}
+					function createLink(header, header_name){
+						var link = "<li><a href='#"+header_name+"'>"+header.innerText+"</a></li>";
+						console.log(link);
+						jQuery('#toc-list').append(link);
+					}
+					function hideToC(){
+						jQuery('.toc-container').hide();
+					}
+
+
+				</script>
+				<noscript>
+					<div>This function requires JavaScript.</div>
+				</noscript>
+				
+			</div>
+		</div>
+	<?php
 	}
 }
 
@@ -282,7 +335,7 @@ function jwr_related_content() { // in dev
 		
 		
 		
-	 	$this_post_type = $this_post->post_type;
+	 	$this_post_type = ucfirst($this_post->post_type);
 		$this_title = $this_post->post_title;
 		$this_link = get_the_permalink($this_post->ID);
 		echo "<li><a href='$this_link'><span>$this_post_type: </span>$this_title</a></li>";
