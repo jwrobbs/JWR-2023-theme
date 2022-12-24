@@ -32,5 +32,5 @@ if ( ! has_custom_logo() ) { ?>
 } else {
 	the_custom_logo();
 }
-echo "<div class='motto'>Writes code. Speaks human.</div>";
+echo "<div class='motto'>Write code. Speak human.</div>";
 echo "</div>";
