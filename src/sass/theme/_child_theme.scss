@@ -11,7 +11,6 @@
 // 4 Templates
 
 //# 4.1 Header template logo
-// $navbar-brand-font-size: $font-size-base * 2;
 
 .navbar-logo-container {
 	
@@ -31,6 +30,19 @@
 		color: $white;
 		line-height: 1;
 	}
+}
+
+//# 4.2 post meta styling
+.jwr-post-meta {
+
+	div {
+		text-align: right;
+	}
+}
+
+//# 4.3 post content
+.content-container {
+	border-left: 1px solid $black;
 }
 
 // 5 Pages

@@ -14120,6 +14120,14 @@ a.skip-link:not(:focus):not(:focus-within) {
   line-height: 1;
 }
 
+.jwr-post-meta div {
+  text-align: right;
+}
+
+.content-container {
+  border-left: 1px solid #000;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #002244;
