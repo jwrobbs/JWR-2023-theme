@@ -156,30 +156,26 @@ function jwr_page_toc() { // in dev
 				<script>
 					jQuery( document ).ready( readyFn );
 					function readyFn( $ ) {
-						/*
-						1. Get all headers in target section
-						2. Add anchors to header
-						3. Create linked list of headers 
-						*/
-						// console.log('start JS for ToC');
+						/**
+						 * 1. Finds all H2s in .entry-content
+						 * 2. Gives them an ID based on their name
+						 * 3. Updates the ToC with a linked list item
+						 * 
+						 * [] Expand to H3s
+						 * [] Move to seperate plugin
+						 */
 						const headers = document.querySelectorAll('.entry-content h2');
-						console.log(headers);
 						if( headers.length === 0 ){
-							console.log('no headers');
-							
+							console.log('ToC: no headers');
 							hideToC();
 						}
 						headers.forEach(processHeader);
 					}
 
 					function processHeader(header){
-						// console.log(header);
 						var header_name = header.innerText;
-						// console.log(header_name);
 						header_name = header_name.toLowerCase();
-						// console.log(header_name);
 						header_name = header_name.replace(/[^a-z]/g,'_');
-						console.log(header_name);
 
 						addID(header, header_name);
 						createLink(header, header_name);
@@ -189,7 +185,6 @@ function jwr_page_toc() { // in dev
 					}
 					function createLink(header, header_name){
 						var link = "<li><a href='#"+header_name+"'>"+header.innerText+"</a></li>";
-						console.log(link);
 						jQuery('#toc-list').append(link);
 					}
 					function hideToC(){
