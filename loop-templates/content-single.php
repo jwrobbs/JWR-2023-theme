@@ -13,27 +13,36 @@ defined( 'ABSPATH' ) || exit;
 
 	<header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-
-			<?php understrap_posted_on(); ?>
-
-		</div><!-- .entry-meta -->
+		<?php the_title( '<h1 class="entry-title text-center pb-3">', '</h1>' ); ?>
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<div class='row'>
+		<div class='meta-container col-md-3'>
+			<div class="entry-meta">
+				<?php 
+					jwr_post_meta();
+					jwr_page_toc();
+				?>
+			</div><!-- .entry-meta -->
+		</div><!-- .meta-container -->
+		<div class='content-container col-md-9 p-4'>
+			<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+			<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+			<div class="entry-content">
 
-	<div class="entry-content">
+				<?php
+				the_content();
+				jwr_post_topics();
+				echo jwr_related_content();
+				understrap_link_pages();
+				?>
 
-		<?php
-		the_content();
-		understrap_link_pages();
-		?>
+			</div><!-- .entry-content -->
 
-	</div><!-- .entry-content -->
 
+		</div><!-- .content-container -->
+	</div>
 	<footer class="entry-footer">
 
 		<?php understrap_entry_footer(); ?>
