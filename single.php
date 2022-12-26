@@ -25,7 +25,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					the_post();
 					get_template_part( 'loop-templates/content', 'single' );
 					understrap_post_nav();
-					// echo "where am I?";
 				}
 				?>
 
