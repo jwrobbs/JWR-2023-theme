@@ -399,6 +399,17 @@ function understrap_post_nav() {
 	<?php
 }
 
+//# 6.0 Temp footer function
+
+function jwr_site_info(){
+	$year = date("Y"); 
+	if( $year == 2022 ){
+		$year_string = '2022';
+	} else {
+		$year_string = "2022 - $year";
+	}
+	echo "<div class='text-center'>© $year_string Josh Robbs</div>";
+}
 
 
 //# 100. Assorted tools

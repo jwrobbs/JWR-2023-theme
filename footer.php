@@ -27,7 +27,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 
-						<?php understrap_site_info(); ?>
+						<?php 
+							jwr_site_info();
+							// understrap_site_info(); // updated26-DEC-2022 jwr
+						?>
 
 					</div><!-- .site-info -->
 
