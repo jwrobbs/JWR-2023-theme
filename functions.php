@@ -361,10 +361,11 @@ function understrap_entry_footer(){
 //# 5.0 "Next/prev article" function - replaces Understrap function
 // no logic/fn changes
 // Fn copied to modify HTML
+// added 26-DEC-2022 jwr
 
 /**
  * Display navigation to next/previous post when applicable.
- *
+ *	
  * @global WP_Post|null $post The current post.
  */
 function understrap_post_nav() {
