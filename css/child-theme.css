@@ -14124,8 +14124,14 @@ a.skip-link:not(:focus):not(:focus-within) {
   text-align: right;
 }
 
-.content-container {
+.single-post .content-container, .single-post .nav-links {
   border-left: 1px solid #000;
+}
+.single-post .wp-post-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
 }
 
 .has-blue-color,

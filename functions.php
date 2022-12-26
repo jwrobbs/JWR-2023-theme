@@ -351,8 +351,52 @@ function jwr_post_topics() {
 	} 
 }
 
+//# 4.0 Footer fn -- Replace understrap_entry_footer() from Understrap
+// Controls the ARTICLE footer
 
+function understrap_entry_footer(){
+	return;
+}
 
+//# 5.0 "Next/prev article" function - replaces Understrap function
+// no logic/fn changes
+// Fn copied to modify HTML
+
+/**
+ * Display navigation to next/previous post when applicable.
+ *
+ * @global WP_Post|null $post The current post.
+ */
+function understrap_post_nav() {
+	global $post;
+	if ( ! $post ) {
+		return;
+	}
+	
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	?>
+	<nav class="navigation post-navigation "> 
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'understrap' ); ?></h2>
+		<div class='row'>
+			<div class="d-flex nav-links justify-content-between offset-md-3 col-md-9 pb-3 ps-4">
+				<?php
+				if ( get_previous_post_link() ) {
+					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link', 'understrap' ) );
+				}
+				if ( get_next_post_link() ) {
+					next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'understrap' ) );
+				}
+				?>
+			</div><!-- .nav-links -->
+		</div>
+	</nav><!-- .post-navigation -->
+	<?php
+}
 
 
 
