@@ -139,12 +139,7 @@ function jwr_post_meta() {
 //# 2. JWR ToC function
 function jwr_page_toc() { // in dev
 	/*
-	My options:
-		1 	Manually add both anchor and link data
-		2.	Add JS to build the whole damn thing. I think I have to.
-			Run in in the footer after that section is built
-			Enqueue it in the footer or embed it
-		2.1 As 2.0 but just add it inline
+	
 	*/
 	//check for ACF repeater field
 	$toc_entries = 1; // !?!
