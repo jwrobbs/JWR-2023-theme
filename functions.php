@@ -411,6 +411,32 @@ function jwr_site_info(){
 	echo "<div class='text-center'>© $year_string Josh Robbs</div>";
 }
 
+//# 7.0 Alt FI
+function get_jwr_alt_fi() {
+	return "I want to be a real FI";
+}
+
+//# 8.0 Remove stupid read more button
+
+function understrap_all_excerpts_get_more_link( $post_excerpt ) { // added 26-DEC-2022 jwr
+	return $post_excerpt;
+
+	// This is the old code that I'm removing. Grrr...
+	/*
+	if ( is_admin() || ! get_the_ID() ) {
+		return $post_excerpt;
+	}
+
+	$permalink = esc_url( get_permalink( (int) get_the_ID() ) ); // @phpstan-ignore-line -- post exists
+
+	return $post_excerpt . ' [...]<p><a class="btn btn-secondary understrap-read-more-link" href="' . $permalink . '">' . __(
+		'Read More...',
+		'understrap'
+	) . '<span class="screen-reader-text"> from ' . get_the_title( get_the_ID() ) . '</span></a></p>';
+	*/
+
+}
+
 
 //# 100. Assorted tools
 
