@@ -35,7 +35,7 @@ defined( 'ABSPATH' ) || exit;
 				the_content();
 				jwr_post_topics();
 				echo jwr_related_content();
-				understrap_link_pages();
+				understrap_link_pages(); // for multi-page posts
 				?>
 
 			</div><!-- .entry-content -->

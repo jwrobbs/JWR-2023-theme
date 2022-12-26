@@ -171,7 +171,6 @@ function jwr_page_toc() { // in dev
 						}
 						headers.forEach(processHeader);
 					}
-
 					function processHeader(header){
 						var header_name = header.innerText;
 						header_name = header_name.toLowerCase();
@@ -190,8 +189,6 @@ function jwr_page_toc() { // in dev
 					function hideToC(){
 						jQuery('.toc-container').hide();
 					}
-
-
 				</script>
 				<noscript>
 					<div>This function requires JavaScript.</div>
