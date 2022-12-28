@@ -9,42 +9,34 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
+<article <?php post_class('archive-card'); ?> id="post-<?php the_ID(); ?>">
+	<?php
+		$permalink = get_permalink();
+		$thumb = get_the_post_thumbnail( $post->ID, 'large' ); 
+		if( !isset($thumb) ){
+			$thumb = get_jwr_alt_fi();
+		} 
+		
+		echo "<div class='style-excerpt-container'><a href='$permalink'>$thumb</a></div>";
+	?>
 	<header class="entry-header">
-
 		<?php
+		//[] verify post type in header
+		//
 		the_title(
 			sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
 			'</a></h2>'
 		);
 		?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-
-			<div class="entry-meta">
-				<?php understrap_posted_on(); ?>
-			</div><!-- .entry-meta -->
-
-		<?php endif; ?>
-
 	</header><!-- .entry-header -->
-
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
 	<div class="entry-content">
 
 		<?php
-		the_excerpt();
-		understrap_link_pages();
+		// the_excerpt();
+		echo wp_trim_excerpt();
 		?>
 
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

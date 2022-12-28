@@ -14134,6 +14134,75 @@ a.skip-link:not(:focus):not(:focus-within) {
   margin-bottom: 2rem;
 }
 
+article.archive-card .style-excerpt-container {
+  overflow: hidden;
+  height: 200px;
+}
+article.archive-card .style-excerpt-container a img {
+  display: block;
+  margin: 0 auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  min-height: 200px;
+  transition: all ease 2s;
+}
+article.archive-card .style-excerpt-container a img:hover {
+  transform: rotate(17deg) scale(1.5);
+  transition: all ease 2s;
+}
+article.archive-card h2, article.archive-card .h2, article.archive-card a {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+article.archive-card h2:hover, article.archive-card .h2:hover, article.archive-card a:hover {
+  text-decoration: underline;
+}
+article.archive-card h2, article.archive-card .h2 {
+  margin: 1rem 0.5rem 1rem;
+}
+
+.blog #main {
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  -moz-column-gap: 2rem;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+.archive #main {
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header header header";
+  -moz-column-gap: 2rem;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+.archive header {
+  grid-area: header;
+}
+
+@media all and (max-width: 992px) {
+  .blog #main, .archive #main {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+  }
+  .archive #main {
+    grid-template-areas: "header header";
+  }
+}
+@media all and (max-width: 576px) {
+  .blog #main, .archive #main {
+    grid-template-columns: 1fr;
+  }
+  .archive #main {
+    grid-template-areas: "header";
+  }
+}
 .has-blue-color,
 .has-blue-color:visited {
   color: #002244;
