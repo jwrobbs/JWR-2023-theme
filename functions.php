@@ -194,6 +194,13 @@ function jwr_page_toc() { // in dev
 	<?php
 	}
 }
+//# 2.1 Rank Math ToC filter
+// this turns off the "use a ToC plugin" warning
+add_filter( 'rank_math/researches/toc_plugins', function( $toc_plugins ) {
+	$toc_plugins['plugin-directory/plugin-filename.php'] = 'Plugin Name';
+ return $toc_plugins;
+});
+
 
 //# 3. JWR Related content
 function jwr_related_content() { // in dev
