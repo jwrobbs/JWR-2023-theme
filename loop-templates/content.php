@@ -33,8 +33,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 
 		<?php
-		// the_excerpt();
-		echo wp_trim_excerpt();
+		the_excerpt();
 		?>
 
 	</div><!-- .entry-content -->
