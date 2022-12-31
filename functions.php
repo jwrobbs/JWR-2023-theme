@@ -196,6 +196,8 @@ function jwr_page_toc() { // in dev
 }
 //# 2.1 Rank Math ToC filter
 // this turns off the "use a ToC plugin" warning
+// obviously I didn't read this. It does nothing as is
+//[] move to plugin and update script
 add_filter( 'rank_math/researches/toc_plugins', function( $toc_plugins ) {
 	$toc_plugins['plugin-directory/plugin-filename.php'] = 'Plugin Name';
  return $toc_plugins;
