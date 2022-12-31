@@ -14203,6 +14203,19 @@ article.archive-card h2, article.archive-card .h2 {
     grid-template-areas: "header";
   }
 }
+.page-id-130 .contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 2rem;
+  column-gap: 2rem;
+}
+.page-id-130 .contact-content .contact-body, .page-id-130 .contact-content .form_container {
+  padding: 1rem;
+}
+.page-id-130 .contact-content .form_container input, .page-id-130 .contact-content .form_container select {
+  max-width: 100% !important;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #002244;

@@ -152,12 +152,33 @@ article.archive-card {
 
 
 
+//#  5.0 Pages
+
+//# 5.1 contact page
+
+.page-id-130 {
+
+	.contact-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 2rem;
+
+		.contact-body, .form_container {
+			// border: 1px solid black;
+			padding:  1rem;
+
+		}
+
+		.form_container {
+			input, select {
+				max-width: 100% !important;
+
+			}
+		}
+	}
+}
 
 
-
-
-
-// 5 Pages
 // #wrapper-navbar, #page-wrapper, #wrapper-footer {
 // 	> .container {
 // 		box-shadow: 2px 2px 5px #00000064;
